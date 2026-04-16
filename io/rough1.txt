@@ -1,0 +1,65 @@
+6. High-Performance Computing (HPC)
+Write programs that run on GPU (CUDA, OpenCL).
+Optimize large computations in C++ with parallel programming (OpenMP, MPI).
+Useful in simulations, physics, finance, bioinformatics.
+
+    // cout << "double epsilon: " << numeric_limits<double>::epsilon() << endl;
+    // cout << "long double epsilon: " << numeric_limits<long double>::epsilon() << endl;    
+
+    #include <bits/stdc++.h>
+using namespace std;
+
+int type_int() {
+    int min_diff = 1;
+    int sum = 1;
+    int cnt = 1;
+    while (true) {
+        int curr = sum + cnt / (cnt + 1);
+        if (curr - sum <= min_diff) {
+            return cnt;
+        }
+        sum = curr;
+        cnt++;
+    }
+}
+
+int type_float() {
+    float min_diff = 1e-9f;
+    float sum = 1.0f;
+    int cnt = 1;
+    while (true) {
+        float curr = sum + 1.0f / (cnt + 1);
+        if (curr - sum <= min_diff) {
+            return cnt;
+        }
+        sum = curr;
+        cnt++;
+    }
+}
+
+int type_double() {
+    double min_diff = 1e-9;
+    double sum = 1.0;
+    int cnt = 1;
+    while (true) {
+        double curr = sum + 1.0 / (cnt + 1);
+        if (curr - sum <= min_diff) {
+            return cnt;
+        }
+        sum = curr;
+        cnt++;
+    }
+}
+
+int main() {
+    int int_cnt = type_int();
+    int float_cnt = type_float();
+    int double_cnt = type_double();
+
+    cout << fixed << setprecision(8);
+    cout << "int converged at cnt = " << int_cnt <<endl;
+    cout << "float converged at cnt = " << float_cnt <<endl;
+    cout << "double converged at cnt = " << double_cnt <<endl;
+
+    return 0;
+}

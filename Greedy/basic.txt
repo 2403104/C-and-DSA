@@ -1,0 +1,29 @@
+A greedy algorithm is a problem-solving approach that makes a series of choices, each of which looks the best at the moment. The algorithm makes the optimal choice at each step with the hope of finding the global optimum. Greedy algorithms are used for optimization problems where the goal is to find the best solution among many possible solutions.
+
+Key Characteristics of Greedy Algorithms:
+1. **Greedy Choice Property**: A global optimum can be arrived at by selecting a local optimum.
+2. **Optimal Substructure**: An optimal solution to the problem contains an optimal solution to subproblems.
+
+Steps to Design a Greedy Algorithm:
+1. **Define the Problem**: Clearly state the problem and identify the constraints.
+2. **Determine the Greedy Choice**: Identify the best choice at each step.
+3. **Prove Greedy Choice Property**: Show that making the greedy choice at each step leads to an optimal solution.
+4. **Prove Optimal Substructure**: Demonstrate that the problem can be broken down into subproblems that can be solved optimally.
+5. **Implement the Algorithm**: Write the code to solve the problem using the greedy approach.
+
+Examples of Greedy Algorithms:
+1. **Activity Selection Problem**: Select the maximum number of activities that don't overlap.
+2. **Fractional Knapsack Problem**: Fill a knapsack with the maximum value of items, allowing fractional parts.
+3. **Huffman Coding**: Create an optimal prefix code for data compression.
+4. **Prim's and Kruskal's Algorithms**: Find the minimum spanning tree in a graph.
+
+Advantages:
+- Simple to implement.
+- Efficient in terms of time complexity for many problems.
+- Often provides a good approximation for NP-hard problems.
+
+Disadvantages:
+- Does not always produce the optimal solution for all problems.
+- Requires proof of correctness for each specific problem.
+
+In summary, greedy algorithms are a powerful tool for solving optimization problems, but they require careful analysis to ensure they produce the correct solution.

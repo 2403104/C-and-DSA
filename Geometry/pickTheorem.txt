@@ -1,0 +1,26 @@
+Pick's Theorem states that for a simple polygon whose vertices have integer coordinates, 
+the number of interior lattice points (I) is given by:
+
+    A = I + (B / 2) - 1
+
+Where:
+- A = Area of the polygon
+- I = Number of interior lattice points
+- B = Number of boundary lattice points
+
+Rearranging the formula to find I:
+
+    I = A - (B / 2) + 1
+
+To count B (boundary points), use the greatest common divisor (GCD) formula for each edge:
+
+    Lattice points on an edge = gcd(|x2 - x1|, |y2 - y1|)
+
+(Sum over all edges of the polygon.)
+
+Conditions:
+- The polygon must be simple (no self-intersections).
+- All vertices must have integer coordinates.
+
+34104
+25030220

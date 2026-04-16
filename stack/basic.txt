@@ -1,0 +1,32 @@
+first in last out
+last in first out
+push,pop,top,empty
+
+#include <stack>
+#include <iostream>
+
+int main() {
+    std::stack<int> s;
+
+    // push() - Insert element at the top
+    s.push(10);
+    s.push(20);
+
+    // pop() - Remove element from the top
+    s.pop();
+
+    // top() - Access the top element
+    std::cout << "Top element: " << s.top() << std::endl;
+
+    // empty() - Check if the stack is empty
+    if (s.empty()) {
+        std::cout << "Stack is empty" << std::endl;
+    } else {
+        std::cout << "Stack is not empty" << std::endl;
+    }
+
+    // size() - Get the number of elements in the stack
+    std::cout << "Stack size: " << s.size() << std::endl;
+
+    return 0;
+}

@@ -1,0 +1,25 @@
+# Tries
+A Trie (prefix tree) is a tree-like data structure used for fast prefix-based searching
+
+A trie, also known as a prefix tree, is a type of search tree used to store a dynamic set or associative array where the keys are usually strings. Unlike a binary search tree, no node in the tree stores the key associated with that node; instead, its position in the tree defines the key with which it is associated.
+
+## Key Features of Tries:
+1. **Inserting a key**: To insert a key into a trie, we start from the root and follow the path defined by the characters in the key. If a node for a character does not exist, we create a new node.
+2. **Searching for a key**: To search for a key, we start from the root and follow the path defined by the characters in the key. If we reach the end of the key and all characters have been found, the key exists in the trie.
+3. **Deleting a key**: Deletion of a key involves searching for the key and then removing the nodes that are no longer needed.
+
+## Advantages of Tries:
+- **Efficient for prefix searches**: Tries are very efficient for prefix-based searches, making them suitable for applications like auto-complete and spell-checking.
+- **Space-efficient for common prefixes**: Tries can be more space-efficient than hash tables when storing many keys with common prefixes.
+
+struct TrieNode {
+    TrieNode* children[26];
+    bool isEndOfWord;
+
+    TrieNode() {
+        isEndOfWord = false;
+        for (int i = 0; i < 26; i++) {
+            children[i] = nullptr;
+        }
+    }
+};

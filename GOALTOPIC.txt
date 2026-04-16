@@ -1,0 +1,111 @@
+
+# 📘 Core & Advanced CP Topics
+
+## ✅ Fundamentals
+- Number Theory
+  - GCD, LCM
+  - Modular Arithmetic (mod inverse, mod exp)
+  - Sieve of Eratosthenes
+- Sorting & Searching
+  - Binary Search
+  - Custom Comparator
+- Data Structures
+  - Arrays, Vectors
+  - Stacks, Queues, Deques
+  - Sets, Maps (Ordered/Unordered)
+
+## ✅ Intermediate Algorithms
+- Prefix Sum / Suffix Sum
+- Difference Array
+- Two Pointers / Sliding Window
+- Greedy Techniques
+- Bit Manipulation
+  - Bitmasking
+  - Subset generation
+- Recursion and Backtracking
+- Hashing
+  - String Hashing (Polynomial, Rolling)
+  - Map-based hashing
+
+## ✅ Graph Theory
+- DFS, BFS
+- Topological Sort
+- Shortest Path Algorithms
+  - Dijkstra’s Algorithm
+  - Bellman-Ford
+  - Floyd-Warshall
+- Connected Components
+  - Union-Find (DSU)
+  - Tarjan's Algorithm (SCC, Bridges, Articulation Points)
+- Tree Algorithms
+  - DFS Tree
+  - Subtree Sum
+  - Tree DP
+  - Binary Lifting (for LCA)
+  - Euler Tour
+- Minimum Spanning Tree
+  - Prim's
+  - Kruskal’s
+
+## ✅ Dynamic Programming
+- 1D / 2D DP
+- Prefix DP
+- Bitmask DP
+- DP on Trees
+- DP with Knapsack variations
+- DP with Sliding Window
+- DP Optimization (Convex Hull Trick, Divide and Conquer, Monotonic Queue)
+- Memory Optimization Techniques
+
+## ✅ String Algorithms
+- KMP Algorithm
+- Z-Algorithm
+- Rabin-Karp (String Hashing)
+- Trie
+- Suffix Array
+- LCP Array
+
+## ✅ Advanced Data Structures
+- Segment Tree
+  - Range Query / Point Update
+  - Lazy Propagation
+- Binary Indexed Tree (Fenwick Tree)
+- Sparse Table
+- Treap / AVL / Ordered Set (PBDS in C++)
+- Mo’s Algorithm
+
+## ✅ Math & Combinatorics
+- Factorials & nCr
+- Modular Inverse (Fermat / Extended Euclidean)
+- Inclusion-Exclusion
+- Catalan Numbers
+- Matrix Exponentiation
+- Linear Diophantine Equations
+- Euler’s Totient Function
+- Chinese Remainder Theorem
+
+## ✅ Geometry (Advanced)
+- Convex Hull (Graham Scan / Andrew’s Algorithm)
+- Line Intersection
+- Sweep Line Algorithm
+- Rotating Calipers
+- Area / Perimeter Calculations
+
+## ✅ Problem Solving Paradigms
+- Binary Search on Answer
+- Meet in the Middle
+- Divide and Conquer
+- Randomized Algorithms
+- Greedy + DP Hybrid
+- State Compression
+- Heavy-Light Decomposition (HLD)
+- Segment Tree Beats
+- Persistent Data Structures
+
+## ✅ Optimization Tips
+- Precomputing Results
+- Memoization via Map or Array
+- Avoiding TLE via fast I/O
+- Caching intermediate values
+- Fast Exponentiation
+- Avoid nested loops > 10^8 complexity

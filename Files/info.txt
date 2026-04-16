@@ -1,0 +1,208 @@
+File Handling in C++
+
+File handling in C++ allows us to create, read, write, and manipulate
+files. We use the <fstream> library which provides three main classes:
+
+-   ofstream → Used for writing to files (output file stream).
+-   ifstream → Used for reading from files (input file stream).
+-   fstream → Used for both reading and writing.
+
+------------------------------------------------------------------------
+
+1. Creating and Writing to a File
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("example.txt"); // Create and open file
+
+    if (!outFile) {
+        cout << "File could not be created!" << endl;
+        return 1;
+    }
+
+    outFile << "Hello, this is a test file." << endl;
+    outFile << "We are writing to a file in C++." << endl;
+
+    outFile.close(); // Close file
+    cout << "Data written successfully!" << endl;
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+2. Reading from a File
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    ifstream inFile("example.txt"); // Open file for reading
+    string line;
+
+    if (!inFile) {
+        cout << "File not found!" << endl;
+        return 1;
+    }
+
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+
+    inFile.close();
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+3. Appending Data to a File
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream file("example.txt", ios::app); // Append mode
+
+    if (!file) {
+        cout << "Error opening file!" << endl;
+        return 1;
+    }
+
+    file << "This line is appended." << endl;
+    file.close();
+
+    cout << "Data appended successfully!" << endl;
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+4. Reading and Writing Together (fstream)
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    fstream file("data.txt", ios::in | ios::out | ios::trunc);
+
+    if (!file) {
+        cout << "File error!" << endl;
+        return 1;
+    }
+
+    file << "First Line" << endl;
+    file << "Second Line" << endl;
+
+    file.seekg(0); // Move pointer to beginning for reading
+    string line;
+    while (getline(file, line)) {
+        cout << line << endl;
+    }
+
+    file.close();
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+5. File Modes
+
+C++ provides different modes when opening files:
+
+-   ios::in → Open for reading
+-   ios::out → Open for writing
+-   ios::app → Append to file
+-   ios::ate → Move pointer to end (can read/write)
+-   ios::trunc → Delete contents of file if it exists
+-   ios::binary → Open file in binary mode
+
+------------------------------------------------------------------------
+
+6. Binary File Handling
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+struct Student {
+    char name[50];
+    int age;
+};
+
+int main() {
+    Student s1 = {"John", 20};
+
+    ofstream out("student.dat", ios::binary);
+    out.write((char*)&s1, sizeof(s1));
+    out.close();
+
+    Student s2;
+    ifstream in("student.dat", ios::binary);
+    in.read((char*)&s2, sizeof(s2));
+    in.close();
+
+    cout << "Name: " << s2.name << ", Age: " << s2.age << endl;
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+7. Checking File State
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream file("example.txt");
+
+    if (file.fail()) cout << "File failed to open!" << endl;
+    if (file.is_open()) cout << "File is open!" << endl;
+
+    file.close();
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+8. Deleting and Renaming Files
+
+#include <iostream>
+#include <cstdio> // For remove() and rename()
+using namespace std;
+
+int main() {
+    if (rename("example.txt", "newfile.txt") == 0)
+        cout << "File renamed successfully!" << endl;
+    else
+        cout << "Error renaming file!" << endl;
+
+    if (remove("newfile.txt") == 0)
+        cout << "File deleted successfully!" << endl;
+    else
+        cout << "Error deleting file!" << endl;
+
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+Summary
+
+✅ Create files
+✅ Write to files
+✅ Read from files
+✅ Append data
+✅ Read & Write using fstream
+✅ Use different modes (ios::in, ios::out, etc.)
+✅ Handle binary files
+✅ Check file state
+✅ Rename & Delete files
+
+This covers all major file handling operations in C++.

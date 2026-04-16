@@ -1,0 +1,29 @@
+Expeedy Algorithm Explanation
+
+The Expeedy algorithm is a greedy algorithm designed to solve optimization problems. The core idea behind greedy algorithms is to make the locally optimal choice at each step with the hope of finding a global optimum. 
+
+Key Characteristics of Expeedy Algorithm:
+1. **Greedy Choice Property**: The algorithm makes a series of choices, each of which looks the best at the moment.
+2. **Optimal Substructure**: A problem exhibits optimal substructure if an optimal solution to the problem contains optimal solutions to the sub-problems.
+
+Steps of the Expeedy Algorithm:
+1. **Initialization**: Start with an initial solution, often an empty set or a starting point.
+2. **Selection**: At each step, select the best possible option that seems to lead towards the optimal solution.
+3. **Feasibility Check**: Ensure that the selected option maintains the feasibility of the solution.
+4. **Solution Augmentation**: Add the selected option to the current solution.
+5. **Repeat**: Repeat the selection and feasibility check until the entire problem is solved.
+
+Applications:
+- **Activity Selection Problem**: Selecting the maximum number of activities that don't overlap.
+- **Fractional Knapsack Problem**: Maximizing the total value in the knapsack by taking fractions of items.
+- **Huffman Coding**: Creating an optimal prefix code for data compression.
+
+Advantages:
+- Simple to implement and understand.
+- Efficient for problems with optimal substructure and greedy choice property.
+
+Disadvantages:
+- May not always produce the optimal solution for all problems.
+- Requires careful analysis to ensure the problem fits the greedy paradigm.
+
+In summary, the Expeedy algorithm is a powerful tool for solving certain types of optimization problems efficiently by making a series of locally optimal choices.

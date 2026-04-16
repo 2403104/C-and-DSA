@@ -1,0 +1,33 @@
+template<
+    typename Iterables,
+    typename = decltype(begin(declval<Iterables>())),
+    typename = typename enable_if<!is_same<Iterables, string>::value>::type
+>
+typename Iterables
+------------------
+The main type we are working with — presumably a container.
+
+typename = decltype(begin(declval<Iterables>()))
+-----------------------------------------------
+Purpose: Checks if begin(container) is valid.
+
+How it works:
+- declval<Iterables>() produces a fake object of type Iterables (without constructing it).
+- begin(...) tries to call the begin() function (either global or member).
+- decltype(...) captures the return type.
+
+Effect:
+This makes the template only participate in overload resolution if Iterables is iterable.
+
+typename = typename enable_if<!is_same<Iterables, string>::value>::type
+------------------------------------------------------------------------
+Purpose: Excludes std::string from matching.
+
+Explanation:
+- enable_if enables this template only if Iterables is not std::string.
+- is_same<Iterables, string>::value is true if Iterables is string,
+  so we negate it (!) to allow all types except string.
+
+
+ChatGPT said:
+#pragma once is a preprocessor directive used in C and C++ programming languages. Its purpose is to ensure that a header file is included only once in a single compilation, preventing multiple inclusions of the same file which can cause errors such as redefinition of classes, functions, or variables.

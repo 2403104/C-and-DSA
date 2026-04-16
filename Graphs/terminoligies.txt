@@ -1,0 +1,98 @@
+Graph Terminologies in C++:
+
+1. Graph: A collection of nodes (vertices) and edges connecting pairs of nodes.
+
+2. Vertex (Node): A fundamental part of a graph, representing an entity.
+
+3. Edge: A connection between two vertices in a graph.
+
+4. Directed Graph (Digraph): A graph where edges have a direction, going from one vertex to another.
+
+5. Undirected Graph: A graph where edges have no direction.
+
+6. Weighted Graph: A graph where edges have weights (values) associated with them.
+
+7. Unweighted Graph: A graph where edges do not have weights.
+
+8. Adjacent Vertices: Two vertices connected directly by an edge.
+
+9. Degree: The number of edges connected to a vertex. In a directed graph, it includes in-degree and out-degree. 
+totalDegreeOfGraph=2*noOfEdges
+indegree : number of incoming edges to that node
+outdegree : number of outgoing edges from that node
+
+10. Path: A sequence of vertices where each adjacent pair is connected by an edge.(any node can't appear in the path)
+all the vertices which come in path of two vertices is called their path 
+
+11. Cycle: A path that starts and ends at the same vertex without repeating any edges or vertices.
+
+12. Connected Graph: A graph where there is a path between every pair of vertices.
+each node has  path from every other node
+
+13. Disconnected Graph: A graph where at least one pair of vertices is not connected by a path.
+each node does not have path from every other node
+
+14. Subgraph: A graph formed from a subset of vertices and edges of a larger graph.
+
+15. Tree: A connected acyclic graph.
+number of edges: n-1
+no cylce present 
+each node has path from every other vertex
+
+16. Forest: A collection of disjoint trees.
+
+17. Bipartite Graph: A graph whose vertices can be divided into two disjoint sets such that no two vertices within the same set are adjacent.
+
+18. Complete Graph: A graph where there is an edge between every pair of vertices.
+
+19. Sparse Graph: A graph with relatively few edges compared to the number of vertices.
+
+20. Dense Graph: A graph with a relatively high number of edges compared to the number of vertices.
+
+21. Adjacency Matrix: A 2D array used to represent a graph, where the element at row i and column j indicates the presence or absence of an edge between vertices i and j.
+
+22. Adjacency List: A collection of lists or arrays used to represent a graph, where each list corresponds to a vertex and contains the vertices adjacent to it.
+
+23. Incidence Matrix: A 2D array used to represent a graph, where rows represent vertices and columns represent edges, indicating which vertices are incident to which edges.
+
+24. Graph Traversal: The process of visiting all the vertices in a graph. Common methods include Depth-First Search (DFS) and Breadth-First Search (BFS).
+
+25. Shortest Path: The path between two vertices in a graph that has the smallest total weight.
+
+26. Minimum Spanning Tree (MST): A subset of edges in a weighted graph that connects all vertices without any cycles and with the minimum possible total edge weight.
+
+27. Connected Components : each connected graph in a Disconnected graph is called conected graph
+
+Directed Acyclic Graph : 
+it has directed edges 
+it is acyclic 
+
+Complete Graph : A graph in which each vertex is connected to everyother vertex by direct edge 
+number of edges : nC2 
+
+
+/*When to use DFS (Depth-First Search):*/
+
+1. Path Finding: DFS is useful for finding a path between two nodes in a graph. It explores each branch to its fullest before backtracking, which can be useful in scenarios where you need to explore all possible paths.
+
+2. Topological Sorting: DFS is used in topological sorting of a directed acyclic graph (DAG). It helps in ordering the vertices linearly such that for every directed edge u -> v, vertex u comes before v.
+
+3. Detecting Cycles: DFS can be used to detect cycles in a graph. By keeping track of visited nodes and the recursion stack, it can identify back edges that form cycles.
+
+4. Solving Puzzles: DFS is suitable for puzzles like mazes, where you need to explore all possible paths to find a solution.
+
+5. Connected Components: In an undirected graph, DFS can be used to find all connected components by repeatedly applying DFS to unvisited nodes.
+
+When to use BFS (Breadth-First Search):
+
+1. Shortest Path: BFS is ideal for finding the shortest path in an unweighted graph. It explores all neighbors at the present depth before moving on to nodes at the next depth level.
+
+2. Level Order Traversal: BFS is used for level order traversal of a tree, where nodes are visited level by level from the root.
+
+3. Bipartite Graph Checking: BFS can be used to check if a graph is bipartite by attempting to color the graph using two colors and ensuring no two adjacent nodes have the same color.
+
+4. Finding Connected Components: Similar to DFS, BFS can also be used to find all connected components in an undirected graph.
+
+5. Web Crawlers: BFS is used in web crawlers to explore the web level by level, ensuring that all pages at a certain depth are visited before moving deeper.
+
+In summary, use DFS when you need to explore all possible paths, detect cycles, or perform topological sorting. Use BFS when you need to find the shortest path, perform level order traversal, or check for bipartite graphs.

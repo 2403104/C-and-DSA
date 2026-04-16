@@ -1,0 +1,6 @@
+fifo lilo
+insert at one end and remove at other end
+enqueue(x),dequeue(),peek(),empty()
+similar to push, pop, front element, check empty
+insert at back  (back ++)
+remove from front(front ++)

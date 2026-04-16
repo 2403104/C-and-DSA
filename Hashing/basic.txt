@@ -1,0 +1,60 @@
+Hashing is a technique used to uniquely identify a specific object from a group of similar objects. It is a process of mapping large data sets of variable length to smaller data sets of a fixed length. The values returned by a hash function are called hash values, hash codes, digests, or simply hashes.
+
+### Key Concepts of Hashing:
+
+1. **Hash Function**: A hash function is a function that takes an input (or 'message') and returns a fixed-size string of bytes. The output is typically a 'digest' that is unique to each unique input. The same input will always produce the same output, but even a small change in the input will produce a significantly different output. Hash functions are designed to be fast and to distribute hash values uniformly across the output space.
+
+2. **Hash Table**: A hash table is a data structure that implements an associative array abstract data type, a structure that can map keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found. Hash tables are highly efficient for lookups, insertions, and deletions.
+
+3. **Collision**: A collision occurs when two different inputs produce the same hash value. This is a common issue in hashing, and various techniques such as chaining (where each bucket points to a linked list of entries that map to the same bucket) and open addressing (where a sequence of probes is used to find an empty bucket) are used to handle collisions. Proper handling of collisions is crucial to maintaining the efficiency of a hash table.
+
+4. **Load Factor**: The load factor is a measure of how full the hash table is. It is calculated as the number of entries divided by the number of buckets. A higher load factor means more collisions, which can degrade performance. To maintain efficiency, hash tables are often resized when the load factor exceeds a certain threshold.
+
+### Applications of Hashing:
+
+1. **Data Retrieval**: Hashing is widely used in database indexing to quickly locate a data record given its search key. This allows for efficient data retrieval operations, which are essential for large databases.
+
+2. **Cryptography**: Hash functions are fundamental to modern cryptography. They are used in various security applications and protocols, including digital signatures, message authentication codes (MACs), and hash-based message integrity checks. Cryptographic hash functions have properties such as pre-image resistance, second pre-image resistance, and collision resistance.
+
+3. **Checksum Algorithms**: Hash functions are used in checksum algorithms to detect errors in data storage or transmission. By comparing the hash value of the original data with the hash value of the received data, it is possible to detect whether any errors have occurred.
+
+4. **Caching**: Hashing is used in caching mechanisms to quickly retrieve cached data. For example, web browsers use hash tables to store and retrieve cached web pages, reducing the need to fetch the same page multiple times from the server.
+
+### Separate Chaining:
+
+Separate chaining is a technique used to handle collisions in a hash table. When a collision occurs, instead of trying to find another empty slot within the hash table, separate chaining uses a linked list to store all the elements that hash to the same index. Each bucket in the hash table points to a linked list of entries that map to the same bucket. This way, multiple elements can be stored at the same index without overwriting each other.
+
+**Advantages of Separate Chaining**:
+1. Simple to implement.
+2. More tolerant of high load factors since the linked lists can grow as needed.
+3. Deletion is straightforward, as it only involves removing an element from a linked list.
+
+**Disadvantages of Separate Chaining**:
+1. Requires additional memory for the linked lists.
+2. Performance can degrade if many elements hash to the same index, leading to long linked lists and slower lookups.
+
+Separate chaining is an effective way to manage collisions and maintain the efficiency of hash table operations.
+
+### Open Addressing:
+
+Open addressing is another technique used to handle collisions in a hash table. Unlike separate chaining, which uses linked lists to store multiple elements at the same index, open addressing stores all elements directly within the hash table itself. When a collision occurs, open addressing finds the next available slot in the table according to a probing sequence.
+
+**Types of Probing**:
+
+1. **Linear Probing**: In linear probing, if a collision occurs at index `i`, the algorithm checks the next slot at index `i+1`. If that slot is also occupied, it continues to check subsequent slots (i+2, i+3, etc.) until an empty slot is found. This method is simple but can lead to clustering, where a group of consecutive occupied slots forms, increasing the likelihood of future collisions.
+
+2. **Quadratic Probing**: Quadratic probing attempts to reduce clustering by checking slots at increasing intervals. If a collision occurs at index `i`, the algorithm checks the slots at indices `i+1^2`, `i+2^2`, `i+3^2`, and so on. This spreads out the probes more evenly across the table, reducing the chance of clustering but can still suffer from secondary clustering.
+
+3. **Double Hashing**: Double hashing uses a second hash function to determine the step size for probing. If a collision occurs at index `i`, the algorithm uses the second hash function to calculate the interval between probes. This method provides a more uniform distribution of probes and reduces clustering more effectively than linear or quadratic probing.
+
+**Advantages of Open Addressing**:
+1. Does not require additional memory for linked lists.
+2. Can be more cache-friendly due to the contiguous storage of elements.
+
+**Disadvantages of Open Addressing**:
+1. Performance can degrade significantly as the load factor increases.
+2. Deletion can be complex, as removing an element may require rehashing other elements to fill the gap.
+3. More susceptible to clustering, which can lead to longer probe sequences and slower operations.
+
+Open addressing is a space-efficient method for handling collisions, but it requires careful management of the probing sequence to maintain performance.
+
